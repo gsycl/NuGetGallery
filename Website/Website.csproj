@@ -252,6 +252,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.ConfigController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Admin.HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -261,6 +264,7 @@
     <Compile Include="ApiController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Admin\Controllers\ConfigController.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Diagnostics\ConcurrentInMemoryPersistenceStore.cs" />
     <Compile Include="Diagnostics\DiagnosticsService.cs" />
@@ -1143,6 +1147,7 @@
     <Content Include="App_Data\Files\Content\FrontPage-Announcement.md" />
     <Content Include="App_Data\Files\Content\FrontPage-About.md" />
     <Content Include="App_Data\Files\Content\Alert.md" />
+    <Content Include="Areas\Admin\Views\Config\Index.cshtml" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
