@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
+using NuGetGallery.Configuration;
 
 namespace NuGetGallery
 {
     public class UserService : IUserService
     {
         public ICryptographyService Crypto { get; protected set; }
-        public IConfiguration Config { get; protected set; }
+        public IAppConfiguration Config { get; protected set; }
         public IEntityRepository<User> UserRepository { get; protected set; }
 
         protected UserService() {}
 
         public UserService(
-            IConfiguration config,
+            IAppConfiguration config,
             ICryptographyService crypto,
             IEntityRepository<User> userRepository) : this()
         {

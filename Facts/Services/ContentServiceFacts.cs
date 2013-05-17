@@ -78,8 +78,10 @@ namespace NuGetGallery.Services
                 Assert.NotNull(cached);
                 Assert.Equal(RenderedFileContent, cached.Content.ToString());
                 Assert.Equal(file.ContentId, cached.ContentId);
-                Assert.Equal(TimeSpan.FromSeconds(42), cached.ExpiryUtc - cached.RetrievedUtc);
                 Assert.True(cached.RetrievedUtc >= testStart);
+
+                var diff = cached.ExpiryUtc - cached.RetrievedUtc;
+                Assert.True(diff > TimeSpan.FromSeconds(40) && diff < TimeSpan.FromSeconds(43));
             }
 
             [Fact]
